@@ -12,12 +12,20 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="text-center space-y-4">
+        <h1 className="text-6xl font-extrabold text-primary">404</h1>
+        <p className="text-2xl text-muted-foreground">
+          Sorry, we couldn’t find the page you’re looking for.
+        </p>
+        <p className="text-sm text-muted-foreground">
+          Maybe the book or page was removed, or you typed an incorrect URL.
+        </p>
+        <a
+          href="/"
+          className="inline-block mt-4 px-6 py-2 bg-gradient-primary text-white rounded-md hover:opacity-90 transition"
+        >
+          Back to BookXChange
         </a>
       </div>
     </div>

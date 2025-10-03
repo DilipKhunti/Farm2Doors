@@ -12,10 +12,10 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg">
-                <img src="./images/logo.webp" alt="farm2doors" />
+                <img src="./images/logo.webp" alt="BookXChange" />
               </div>
               <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                Farm<span className="text-accent">2</span>Doors
+                Book<span className="text-accent">X</span>Change
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -101,7 +101,7 @@ const Footer = () => {
                 to="/farmer-support" 
                 className="block text-sm text-muted-foreground hover:text-primary transition-smooth"
               >
-                Farmer Support
+                Support
               </Link>
               <Link 
                 to="/resources" 
@@ -118,15 +118,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 flex-shrink-0" />
-                <span>support@farm2doors.com</span>
+                <span>support@buybooks.com</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                <span>+1 (555) 123-FARM</span>
+                <span>+1 (555) 123-BOOK</span>
               </div>
               <div className="flex items-start space-x-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 flex-shrink-0 mt-0.5" />
-                <span>123 Farm Valley Road<br />Agricultural District, CA 95001</span>
+                <span>123 Book Valley Road<br />Book District, CA 95001</span>
               </div>
             </div>
           </div>
@@ -135,7 +135,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Farm2Doors. All rights reserved.
+            © {currentYear} BuyBooks. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm text-muted-foreground">
             <Link to="/privacy" className="hover:text-primary transition-smooth">

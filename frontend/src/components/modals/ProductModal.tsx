@@ -42,15 +42,16 @@ const ProductModal = ({ open, onOpenChange, product, onSave, isHandling }: Produ
   });
 
   const categories = [
-    "Vegetables",
-    "Fruits",
-    "Herbs",
-    "Grains",
-    "Dairy",
-    "Eggs",
-    "Meat",
-    "Flowers",
-    "Others"
+    "Fiction",
+    "Non-Fiction",
+    "Science",
+    "History",
+    "Biography",
+    "Children",
+    "Fantasy",
+    "Romance",
+    "Thriller",
+    "Others",
   ];
 
   useEffect(() => {
@@ -99,22 +100,23 @@ const ProductModal = ({ open, onOpenChange, product, onSave, isHandling }: Produ
         <DialogHeader>
           <DialogTitle className="flex items-center space-x-2">
             <Package className="h-5 w-5" />
-            <span>{isEditing ? "Edit Product" : "Add New Product"}</span>
+            <span>{isEditing ? "Edit Book" : "Add New Book"}</span>
           </DialogTitle>
           <DialogDescription>
             {isEditing
-              ? "Update your product information"
-              : "Fill in the details to list your product"}
+              ? "Update your book information"
+              : "Fill in the details to list your book"}
           </DialogDescription>
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Book Name & Category */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="product-name">Product Name</Label>
+              <Label htmlFor="book-name">Book Title</Label>
               <Input
-                id="product-name"
-                placeholder="e.g., Organic Tomatoes"
+                id="book-name"
+                placeholder="e.g., The Great Gatsby"
                 value={formData.name}
                 onChange={(e) => handleInputChange("name", e.target.value)}
                 required
@@ -122,7 +124,7 @@ const ProductModal = ({ open, onOpenChange, product, onSave, isHandling }: Produ
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="category">Category</Label>
+              <Label htmlFor="category">Category / Genre</Label>
               <Select
                 value={formData.category}
                 onValueChange={(value) => handleInputChange("category", value)}
@@ -141,6 +143,7 @@ const ProductModal = ({ open, onOpenChange, product, onSave, isHandling }: Produ
             </div>
           </div>
 
+          {/* Price & Quantity */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="price">Price (₹)</Label>
@@ -151,17 +154,19 @@ const ProductModal = ({ open, onOpenChange, product, onSave, isHandling }: Produ
                 min="0"
                 placeholder="0.00"
                 value={formData.price || ""}
-                onChange={(e) => handleInputChange("price", parseFloat(e.target.value) || 0)}
+                onChange={(e) =>
+                  handleInputChange("price", parseFloat(e.target.value) || 0)
+                }
                 required
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="quantity">Quantity Available</Label>
+              <Label htmlFor="quantity">Copies Available</Label>
               <Input
                 id="quantity"
                 type="text"
-                placeholder="eg: 1kg, 1pc, 1ltr"
+                placeholder="eg: 1, 5, 10"
                 value={formData.quantity || ""}
                 onChange={(e) => handleInputChange("quantity", e.target.value)}
                 required
@@ -169,11 +174,12 @@ const ProductModal = ({ open, onOpenChange, product, onSave, isHandling }: Produ
             </div>
           </div>
 
+          {/* Description */}
           <div className="space-y-2">
             <Label htmlFor="description">Description</Label>
             <Textarea
               id="description"
-              placeholder="Describe your product, growing methods, taste, etc."
+              placeholder="Describe the book, author, edition, etc."
               value={formData.description}
               onChange={(e) => handleInputChange("description", e.target.value)}
               rows={3}
@@ -181,16 +187,30 @@ const ProductModal = ({ open, onOpenChange, product, onSave, isHandling }: Produ
             />
           </div>
 
+          {/* Cover Image Upload */}
           <div className="flex items-center space-x-4">
             <div className="w-20 rounded-lg bg-muted overflow-hidden">
-              <img src={formData.image || "/images/product.webp"} alt="Profile" className="w-full h-full object-cover" />
+              <img
+                src={formData.image || "/images/product.webp"}
+                alt="Book Cover"
+                className="w-full h-full object-cover"
+              />
             </div>
-            <label htmlFor="profilePicture" className="cursor-pointer text-black border border-black px-2 py-1 rounded-md hover:bg-black/10">
-              Change Photo
+            <label
+              htmlFor="profilePicture"
+              className="cursor-pointer text-black border border-black px-2 py-1 rounded-md hover:bg-black/10"
+            >
+              Change Cover
             </label>
-            <input type="file" id="profilePicture" className="hidden" onChange={handleImageChange} />
+            <input
+              type="file"
+              id="profilePicture"
+              className="hidden"
+              onChange={handleImageChange}
+            />
           </div>
 
+          {/* Actions */}
           <div className="flex space-x-2 pt-4">
             <Button
               type="button"
@@ -200,8 +220,16 @@ const ProductModal = ({ open, onOpenChange, product, onSave, isHandling }: Produ
             >
               Cancel
             </Button>
-            <Button type="submit" className="flex-1 bg-gradient-primary disabled:opacity-50" disabled={isHandling}>
-              {isHandling ? "Processing..." : isEditing ? "Update Product" : "Add Product"}
+            <Button
+              type="submit"
+              className="flex-1 bg-gradient-primary disabled:opacity-50"
+              disabled={isHandling}
+            >
+              {isHandling
+                ? "Processing..."
+                : isEditing
+                ? "Update Book"
+                : "Add Book"}
             </Button>
           </div>
         </form>

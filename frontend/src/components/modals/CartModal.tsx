@@ -39,10 +39,10 @@ const CartModal = ({ open, onOpenChange }: CartModalProps) => {
         <DialogHeader>
           <DialogTitle className="flex items-center space-x-2">
             <ShoppingCart className="h-5 w-5" />
-            <span>Shopping Cart</span>
+            <span>My Cart</span>
           </DialogTitle>
           <DialogDescription>
-            Review your items and proceed to checkout
+            Review your selected books and proceed to checkout
           </DialogDescription>
         </DialogHeader>
 
@@ -54,7 +54,10 @@ const CartModal = ({ open, onOpenChange }: CartModalProps) => {
             </div>
           ) : (
             cartItems.map((item) => (
-              <div key={item._id} className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 p-4 border border-black/50 rounded-lg">
+              <div
+                key={item._id}
+                className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 p-4 border border-black/50 rounded-lg"
+              >
                 <div className="flex items-center space-x-4 w-full sm:w-auto">
                   <img
                     src={item.image || "/images/product.webp"}
@@ -63,7 +66,9 @@ const CartModal = ({ open, onOpenChange }: CartModalProps) => {
                   />
                   <div className="flex-1 min-w-0">
                     <h4 className="font-medium truncate">{item.name}</h4>
-                    <p className="text-sm text-muted-foreground truncate">{item.quantity}</p>
+                    <p className="text-sm text-muted-foreground truncate">
+                      Quantity: {item.quantity}
+                    </p>
                     <p className="font-bold text-primary">₹{item.price}</p>
                   </div>
                 </div>
@@ -109,7 +114,10 @@ const CartModal = ({ open, onOpenChange }: CartModalProps) => {
               <Button
                 className="w-full bg-gradient-primary"
                 size="lg"
-                onClick={() => { setCheckoutModalOpen(true); onOpenChange(false) }}
+                onClick={() => {
+                  setCheckoutModalOpen(true);
+                  onOpenChange(false);
+                }}
               >
                 Proceed to Checkout
               </Button>

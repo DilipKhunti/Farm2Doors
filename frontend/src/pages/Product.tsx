@@ -65,13 +65,17 @@ const Product = () => {
     <div className="min-h-screen bg-background">
       <div className="container py-8">
         {/* Back Button */}
-        <Button variant="outline" className="mb-6" onClick={() => window.history.back()}>
+        <Button
+          variant="outline"
+          className="mb-6"
+          onClick={() => window.history.back()}
+        >
           <ArrowLeft className="h-4 w-4 mr-2" />
-          Back to Shop
+          Back to Bookstore
         </Button>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Product Images */}
+          {/* Book Cover */}
           <div className="space-y-4">
             <div className="aspect-square bg-muted rounded-lg overflow-hidden">
               <img
@@ -82,17 +86,23 @@ const Product = () => {
             </div>
           </div>
 
-          {/* Product Details */}
+          {/* Book Details */}
           <div className="space-y-6">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <Badge variant="secondary" className="bg-accent text-white">{product?.category}</Badge>
+                <Badge variant="secondary" className="bg-accent text-white">
+                  {product?.category}
+                </Badge>
               </div>
               <h1 className="text-3xl font-bold mb-4">{product?.name}</h1>
               <div className="flex items-center space-x-3 mb-4">
-                <span className="text-3xl font-bold text-primary">₹{product?.price}</span>
+                <span className="text-3xl font-bold text-primary">
+                  ₹{product?.price}
+                </span>
               </div>
-              <div className="text-sm font-medium mb-2 block">Quantity : {product.quantity} Size available</div>
+              <div className="text-sm font-medium mb-2 block">
+                Available Copies: {product.quantity}
+              </div>
             </div>
 
             {/* Seller Info */}
@@ -110,23 +120,43 @@ const Product = () => {
                     <MapPin className="h-4 w-4 mr-1" />
                     {product?.uploadedBy?.address}
                   </div>
-                  <p className="text-sm text-muted-foreground">{product?.uploadedBy?.email}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {product?.uploadedBy?.email}
+                  </p>
                 </div>
               </CardContent>
             </Card>
 
             <div className="flex space-x-3">
-              <Button onClick={handleAddToCart} className="flex-1 bg-gradient-primary" disabled={isAddingToCart}>
+              <Button
+                onClick={handleAddToCart}
+                className="flex-1 bg-gradient-primary"
+                disabled={isAddingToCart}
+              >
                 {isAddingToCart ? "Adding to cart..." : "Add to Cart"}
               </Button>
-              <Button variant="outline" size="icon" onClick={() => { navigator.clipboard.writeText(window.location.href); toast({ title: "Copied to clipboard", description: "Product link copied to clipboard" }) }}>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => {
+                  navigator.clipboard.writeText(window.location.href);
+                  toast({
+                    title: "Copied to clipboard",
+                    description: "Book link copied to clipboard",
+                  });
+                }}
+              >
                 <Share2 className="h-4 w-4" />
               </Button>
             </div>
+
             <Separator />
+
             <div>
-              <h3 className="text-lg font-semibold mb-3">Description</h3>
-              <p className="text-muted-foreground leading-relaxed">{product.description}</p>
+              <h3 className="text-lg font-semibold mb-3">Book Description</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {product.description}
+              </p>
             </div>
           </div>
         </div>

@@ -20,11 +20,12 @@ const Pricing = () => {
     <div className="container py-12 space-y-12">
       {/* Hero Section */}
       <div className="text-center space-y-6">
-        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent h-20">
           Simple, Transparent Pricing
         </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-          Choose the plan that works best for your farm. No hidden fees, no long-term contracts.
+          Choose the plan that works best for selling your books. No hidden
+          fees, no long-term contracts.
         </p>
       </div>
 
@@ -38,38 +39,41 @@ const Pricing = () => {
               <div className="text-4xl font-bold text-foreground">₹0</div>
               <div className="text-sm text-muted-foreground">per month</div>
             </div>
-            <p className="text-muted-foreground">Perfect for getting started</p>
+            <p className="text-muted-foreground">Perfect for new sellers</p>
           </CardHeader>
 
           <CardContent className="flex flex-col flex-grow space-y-6">
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                <span className="text-sm">Up to 10 product listings</span>
+                <span className="text-sm">List up to 5 books</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                <span className="text-sm">5% commission on sales</span>
+                <span className="text-sm">10% commission per sale</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
                 <span className="text-sm">Basic customer support</span>
               </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-green-500" />
-                <span className="text-sm">Standard analytics</span>
-              </li>
             </ul>
 
-            {/* Spacer to push button down */}
             <div className="flex-grow" />
 
-            <Button variant="outline" className="w-full mt-auto bg-accent hover:bg-accent/80 text-white" onClick={() => toast({ title: "Free plan is already enabled", description: "You are already on the free plan." })}>
+            <Button
+              variant="outline"
+              className="w-full mt-auto bg-accent hover:bg-accent/80 text-white"
+              onClick={() =>
+                toast({
+                  title: "Free plan is already enabled",
+                  description: "You are already on the free plan.",
+                })
+              }
+            >
               Choose Free
             </Button>
           </CardContent>
         </Card>
-
 
         {/* Professional Plan */}
         <Card className="relative flex flex-col border-primary shadow-lg">
@@ -86,46 +90,43 @@ const Pricing = () => {
               <div className="text-4xl font-bold text-foreground">₹299</div>
               <div className="text-sm text-muted-foreground">per month</div>
             </div>
-            <p className="text-muted-foreground">For growing farms</p>
+            <p className="text-muted-foreground">For growing bookstores</p>
           </CardHeader>
 
           <CardContent className="flex flex-col flex-grow space-y-6">
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                <span className="text-sm">Unlimited product listings</span>
+                <span className="text-sm">Unlimited book listings</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                <span className="text-sm">3% commission on sales</span>
+                <span className="text-sm">5% commission per sale</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                <span className="text-sm">Priority customer support</span>
+                <span className="text-sm">Priority support</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                <span className="text-sm">Advanced analytics</span>
+                <span className="text-sm">Promoted book listings</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                <span className="text-sm">Featured listings</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-green-500" />
-                <span className="text-sm">Marketing tools</span>
+                <span className="text-sm">Basic marketing tools</span>
               </li>
             </ul>
 
-            {/* Spacer pushes button to bottom */}
             <div className="flex-grow" />
 
-            <Button className="w-full bg-gradient-primary hover:opacity-90 mt-auto" onClick={() => handleSubscribe("professional")}>
+            <Button
+              className="w-full bg-gradient-primary hover:opacity-90 mt-auto"
+              onClick={() => handleSubscribe("professional")}
+            >
               Choose Professional
             </Button>
           </CardContent>
         </Card>
-
 
         {/* Enterprise Plan */}
         <Card className="relative flex flex-col">
@@ -135,7 +136,9 @@ const Pricing = () => {
               <div className="text-4xl font-bold text-foreground">₹999</div>
               <div className="text-sm text-muted-foreground">per month</div>
             </div>
-            <p className="text-muted-foreground">For large operations</p>
+            <p className="text-muted-foreground">
+              For large sellers & publishers
+            </p>
           </CardHeader>
 
           <CardContent className="flex flex-col flex-grow space-y-6">
@@ -146,7 +149,7 @@ const Pricing = () => {
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                <span className="text-sm">1% commission on sales</span>
+                <span className="text-sm">2% commission per sale</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
@@ -158,60 +161,76 @@ const Pricing = () => {
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                <span className="text-sm">API access</span>
+                <span className="text-sm">API & bulk upload support</span>
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
-                <span className="text-sm">White-label options</span>
+                <span className="text-sm">Brand promotion & campaigns</span>
               </li>
             </ul>
 
-            {/* Spacer to push button down */}
             <div className="flex-grow" />
 
-            <Button variant="outline" className="w-full mt-auto bg-accent hover:bg-accent/80 text-white" onClick={() => handleSubscribe("enterprise")}>
+            <Button
+              variant="outline"
+              className="w-full mt-auto bg-accent hover:bg-accent/80 text-white"
+              onClick={() => handleSubscribe("enterprise")}
+            >
               Choose Enterprise
             </Button>
           </CardContent>
         </Card>
-
       </div>
 
       {/* FAQ Section */}
       <div className="space-y-8 max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-foreground">Frequently Asked Questions</h2>
+        <h2 className="text-3xl font-bold text-center text-foreground">
+          Frequently Asked Questions
+        </h2>
         <div className="space-y-6">
           <div className="space-y-2">
-            <h3 className="font-semibold text-foreground">How does commission work?</h3>
+            <h3 className="font-semibold text-foreground">
+              How does commission work?
+            </h3>
             <p className="text-muted-foreground text-sm">
-              Commission is calculated on each successful sale and automatically deducted from your payout.
-              There are no upfront fees or hidden charges.
+              A small commission is deducted from every successful book sale
+              depending on your plan.
             </p>
           </div>
           <div className="space-y-2">
-            <h3 className="font-semibold text-foreground">Can I change plans anytime?</h3>
+            <h3 className="font-semibold text-foreground">
+              Can I change plans anytime?
+            </h3>
             <p className="text-muted-foreground text-sm">
-              Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately,
-              and you'll only pay the difference.
+              Yes, you can upgrade or downgrade anytime. Changes apply
+              immediately.
             </p>
           </div>
           <div className="space-y-2">
-            <h3 className="font-semibold text-foreground">What payment methods do you accept?</h3>
+            <h3 className="font-semibold text-foreground">
+              What payment methods do you accept?
+            </h3>
             <p className="text-muted-foreground text-sm">
-              We accept all major credit cards, PayPal, and bank transfers. Payments are processed
-              securely through our certified payment partners.
+              We support UPI, debit/credit cards, PayPal, and net banking.
             </p>
           </div>
           <div className="space-y-2">
-            <h3 className="font-semibold text-foreground">Is there a free trial?</h3>
+            <h3 className="font-semibold text-foreground">
+              Is there a free trial?
+            </h3>
             <p className="text-muted-foreground text-sm">
-              The Basic plan is free forever! For paid plans, we offer a 30-day money-back guarantee
-              if you're not completely satisfied.
+              The Basic plan is free forever. Paid plans come with a 30-day
+              money-back guarantee.
             </p>
           </div>
         </div>
       </div>
-      <SubscriptionModal open={open} onOpenChange={setOpen} subscriptionPlan={subscriptionPlan} />
+
+      <SubscriptionModal
+        open={open}
+        onOpenChange={setOpen}
+        subscriptionPlan={subscriptionPlan}
+      />
     </div>
   );
 };

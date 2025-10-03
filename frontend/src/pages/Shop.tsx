@@ -41,15 +41,15 @@ const Shop = () => {
 
 
   const categories = [
-    "All",
-    "Vegetables",
-    "Fruits",
-    "Herbs",
-    "Grains",
-    "Dairy",
-    "Eggs",
-    "Meat",
-    "Flowers",
+    "Fiction",
+    "Non-Fiction",
+    "Science",
+    "History",
+    "Biography",
+    "Children",
+    "Fantasy",
+    "Romance",
+    "Thriller",
     "Others",
   ];
 
@@ -75,19 +75,20 @@ const Shop = () => {
       <div className="container py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">Fresh Products</h1>
-          <p className="text-muted-foreground text-lg">Discover farm-fresh produce delivered directly to your door</p>
+          <h1 className="text-4xl font-bold mb-2">Books for Sale</h1>
+          <p className="text-muted-foreground text-lg">
+            Discover your next favorite book and get it delivered to your door
+          </p>
         </div>
 
         {/* Filters - Responsive Flex Row */}
         <div className="flex flex-col lg:flex-row gap-6 mb-8 lg:h-10">
-
           {/* Search */}
           <div className="flex-1">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
               <Input
-                placeholder="Search products..."
+                placeholder="Search books..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="pl-10"
@@ -97,9 +98,12 @@ const Shop = () => {
 
           {/* Category Filter */}
           <div className="flex-1">
-            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+            <Select
+              value={selectedCategory}
+              onValueChange={setSelectedCategory}
+            >
               <SelectTrigger>
-                <SelectValue placeholder="Select Category" />
+                <SelectValue placeholder="Select Genre" />
               </SelectTrigger>
               <SelectContent>
                 {categories.map((category) => (
@@ -127,22 +131,24 @@ const Shop = () => {
               />
             </div>
           </div>
-
-
         </div>
-
 
         {/* Results */}
         <div className="mb-6 flex items-center justify-between">
           <p className="text-muted-foreground">
-            Showing {filteredProducts.length} products
+            Showing {filteredProducts.length} books
           </p>
         </div>
 
-        {/* Products Grid */}
-        <div className={`grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4`}>
+        {/* Books Grid */}
+        <div
+          className={`grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4`}
+        >
           {filteredProducts.map((product) => (
-            <Card key={product._id} className="group hover:shadow-medium transition-smooth cursor-pointer">
+            <Card
+              key={product._id}
+              className="group hover:shadow-medium transition-smooth cursor-pointer"
+            >
               <CardHeader className="p-0">
                 <div className="aspect-square bg-muted rounded-t-lg overflow-hidden">
                   <img
@@ -155,15 +161,22 @@ const Shop = () => {
               <CardContent className="p-4">
                 <div className="flex items-start justify-between mb-2">
                   <CardTitle className="text-lg">{product.name}</CardTitle>
-                  <Badge variant="secondary" className="bg-accent text-white">{product.category}</Badge>
+                  <Badge variant="secondary" className="bg-accent text-white">
+                    {product.category}
+                  </Badge>
                 </div>
-                <p className="text-sm text-muted-foreground mb-2">{product.seller}</p>
-                <p className="text-sm text-muted-foreground">{product.location}</p>
+               
               </CardContent>
               <CardFooter className="p-4 pt-0 flex items-center justify-between">
-                <span className="text-2xl font-bold text-primary">₹{product.price}</span>
-                <Button size="sm" className="bg-gradient-primary" onClick={() => navigate(`/product/${product._id}`)}>
-                  View Product
+                <span className="text-2xl font-bold text-primary">
+                  ₹{product.price}
+                </span>
+                <Button
+                  size="sm"
+                  className="bg-gradient-primary"
+                  onClick={() => navigate(`/product/${product._id}`)}
+                >
+                  View Book
                 </Button>
               </CardFooter>
             </Card>
@@ -173,7 +186,9 @@ const Shop = () => {
         {/* Empty State */}
         {filteredProducts.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-muted-foreground text-lg mb-4">No products found matching your criteria</p>
+            <p className="text-muted-foreground text-lg mb-4">
+              No books found matching your criteria
+            </p>
             <Button
               variant="outline"
               onClick={() => {

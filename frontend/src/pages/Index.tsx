@@ -1,57 +1,79 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Leaf, Truck, Shield, Star, Users, Package, HelpingHand, PhoneCall, BookOpenCheck, BarChart2, UploadCloud, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  Truck,
+  Shield,
+  Star,
+  Users,
+  Package,
+  HelpingHand,
+  PhoneCall,
+  BookOpenCheck,
+  BarChart2,
+  UploadCloud,
+  ShieldCheck,
+  LibraryBig,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-
 
 const Index = () => {
   const features = [
     {
-      icon: Leaf,
-      title: "Farm Fresh",
-      description: "Directly sourced from local farmers ensuring maximum freshness and quality."
+      icon: BookOpen,
+      title: "Wide Collection",
+      description:
+        "From academic to fiction, find books across every genre and interest.",
     },
     {
       icon: Truck,
       title: "Fast Delivery",
-      description: "Quick and reliable delivery from farm to your doorstep within 24-48 hours."
+      description:
+        "Quick and reliable book delivery to your doorstep within 2–5 days.",
     },
     {
       icon: Shield,
       title: "Quality Assured",
-      description: "All products are carefully inspected and meet our high quality standards."
-    }
+      description: "Every book is verified for quality before reaching you.",
+    },
   ];
 
   const sellGrowFeatures = [
     {
-      icon: Package,
-      title: "Zero Commission for Small Farmers",
-      desc: "No hidden charges, no middlemen. Keep what you earn.",
+      icon: UploadCloud,
+      title: "Easy Book Upload",
+      desc: "List your books with simple steps and reach thousands of readers.",
     },
     {
       icon: BarChart2,
-      title: "Flexible Plans for Larger Sellers",
-      desc: "Scale with our Pro and Enterprise pricing tiers.",
-    },
-    {
-      icon: UploadCloud,
-      title: "Easy Product Upload",
-      desc: "List your farm produce with just a few clicks.",
+      title: "Grow Your Reach",
+      desc: "Access a large community of book lovers across the country.",
     },
     {
       icon: ShieldCheck,
-      title: "Safe Payments & Fast Support",
-      desc: "We ensure your earnings and experience are secure.",
+      title: "Secure Payments",
+      desc: "Get paid on time with our safe and transparent payment system.",
     },
-  ]
+    {
+      icon: Package,
+      title: "Hassle-Free Shipping",
+      desc: "We help you manage delivery so you can focus on selling.",
+    },
+  ];
 
   const stats = [
-    { number: "500+", label: "Happy Farmers" },
-    { number: "10,000+", label: "Products Sold" },
-    { number: "50+", label: "Cities Served" },
-    { number: "4.9", label: "Average Rating" }
+    { number: "10,000+", label: "Books Available" },
+    { number: "5,000+", label: "Happy Readers" },
+    { number: "1,000+", label: "Active Sellers" },
+    { number: "4.9", label: "Average Rating" },
   ];
 
   return (
@@ -68,27 +90,39 @@ const Index = () => {
             <div className="space-y-8">
               <div className="space-y-4">
                 <Badge className="bg-white/20 text-white border-white/30 hover:bg-white/30">
-                  <Leaf className="w-4 h-4 mr-2" />Direct from Farm
+                  <LibraryBig className="w-4 h-4 mr-2" />
+                  Your Online Bookstore
                 </Badge>
                 <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                  From the <span className="sm:text-accent text-primary">farm</span> to your <span className="text-accent">doorstep</span>
+                  Discover,{" "}
+                  <span className="sm:text-accent text-primary">Read</span> &{" "}
+                  <span className="text-accent">Collect</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-                  Connect with local farmers and get the freshest produce delivered directly to your home. Support sustainable agriculture while enjoying farm-fresh quality.
+                  BookXChange connects readers and sellers in one trusted
+                  marketplace. Explore thousands of books and grow your personal
+                  library.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="bg-accent bg-accent/70 hover:bg-accent text-accent-foreground">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-accent/70 hover:bg-accent text-accent-foreground"
+                >
                   <Link to="/shop">
-                    Shop Now
+                    Browse Books
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-white text-primary bg-white/70 hover:bg-white hover:text-primary">
-                  <Link to="/profile">
-                    Join as Seller
-                  </Link>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-white text-primary bg-white/70 hover:bg-white hover:text-primary"
+                >
+                  <Link to="/profile">Sell Your Books</Link>
                 </Button>
               </div>
 
@@ -99,7 +133,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center space-x-1">
                   <Users className="h-4 w-4 text-white/90" />
-                  <span className="text-white/90">10,000+ Customers</span>
+                  <span className="text-white/90">5,000+ Readers</span>
                 </div>
               </div>
             </div>
@@ -111,15 +145,19 @@ const Index = () => {
       <section className="py-24 bg-muted/30">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Why Choose Farm2Doors?</h2>
+            <h2 className="text-4xl font-bold mb-4">Why Choose BookXChange?</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We bridge the gap between farmers and consumers, ensuring fresh produce and fair prices for everyone.
+              A trusted platform where readers discover books and sellers find
+              their audience.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="text-center group hover:shadow-medium transition-smooth">
+              <Card
+                key={index}
+                className="text-center group hover:shadow-medium transition-smooth"
+              >
                 <CardHeader>
                   <div className="mx-auto h-16 w-16 rounded-full bg-gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-smooth">
                     <feature.icon className="h-8 w-8 text-primary-foreground" />
@@ -127,7 +165,9 @@ const Index = () => {
                   <CardTitle className="text-xl">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base">{feature.description}</CardDescription>
+                  <CardDescription className="text-base">
+                    {feature.description}
+                  </CardDescription>
                 </CardContent>
               </Card>
             ))}
@@ -141,7 +181,9 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
+                <div className="text-4xl md:text-5xl font-bold mb-2">
+                  {stat.number}
+                </div>
                 <div className="text-primary-foreground/80">{stat.label}</div>
               </div>
             ))}
@@ -153,30 +195,44 @@ const Index = () => {
       <section className="py-12">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="text-4xl md:text-5xl font-bold">Ready to Get Started?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Ready to Get Started?
+            </h2>
             <p className="text-xl text-muted-foreground">
-              Whether you're looking to buy fresh produce or sell your farm products, Farm2Doors is here to help.
+              Whether you're here to find your next great read or to sell your
+              collection, BookXChange has you covered.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
               <Card className="p-6 hover:shadow-medium transition-smooth">
                 <div className="space-y-4">
-                  <Package className="h-12 w-12 text-primary mx-auto" />
-                  <h3 className="text-xl font-semibold">For Buyers</h3>
-                  <p className="text-muted-foreground">Discover fresh, local produce and support your community farmers.</p>
-                  <Button asChild className="w-full bg-gradient-primary hover:bg-gradient-primary/80">
-                    <Link to="/shop">Start Shopping</Link>
+                  <BookOpen className="h-12 w-12 text-primary mx-auto" />
+                  <h3 className="text-xl font-semibold">For Readers</h3>
+                  <p className="text-muted-foreground">
+                    Explore thousands of titles and find books you’ll love.
+                  </p>
+                  <Button
+                    asChild
+                    className="w-full bg-gradient-primary hover:bg-gradient-primary/80"
+                  >
+                    <Link to="/shop">Start Browsing</Link>
                   </Button>
                 </div>
               </Card>
 
               <Card className="p-6 hover:shadow-medium transition-smooth">
                 <div className="space-y-4">
-                  <Leaf className="h-12 w-12 text-primary mx-auto" />
-                  <h3 className="text-xl font-semibold">For Farmers</h3>
-                  <p className="text-muted-foreground">Sell your products directly to customers and grow your business.</p>
-                  <Button asChild variant="outline" className="w-full bg-accent text-white">
-                    <Link to="/profile">Upload Products</Link>
+                  <Package className="h-12 w-12 text-primary mx-auto" />
+                  <h3 className="text-xl font-semibold">For Sellers</h3>
+                  <p className="text-muted-foreground">
+                    Upload and sell your books to a wide audience of readers.
+                  </p>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="w-full bg-accent text-white"
+                  >
+                    <Link to="/profile">Sell Books</Link>
                   </Button>
                 </div>
               </Card>
@@ -188,7 +244,6 @@ const Index = () => {
       {/* Info Sections */}
       <section className="py-12 bg-muted/40">
         <div className="container space-y-24">
-
           {/* About Us */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -197,10 +252,14 @@ const Index = () => {
                 <h2 className="text-3xl font-bold">Who We Are</h2>
               </div>
               <p className="text-muted-foreground text-lg mb-4">
-                At <span className="font-semibold">Farm2Doors</span>, we’re building a bridge between India’s farmers and modern consumers. Our mission is simple — support rural livelihoods while making fresh produce easily accessible to every doorstep.
+                At <span className="font-semibold">BookXChange</span>, we’re
+                passionate about connecting readers with the stories they love.
+                Our mission is to make books more accessible while empowering
+                independent sellers.
               </p>
               <p className="text-muted-foreground text-lg">
-                From humble beginnings to a thriving community of farmers and customers, our journey continues with purpose.
+                From students to book collectors, we serve everyone who believes
+                in the power of reading.
               </p>
               <div className="flex justify-start mt-6">
                 <Button className="bg-gradient-primary hover:bg-gradient-primary/80 min-w-[150px] text-sm md:text-base">
@@ -208,31 +267,43 @@ const Index = () => {
                 </Button>
               </div>
             </div>
-            <img src="./images/about.webp" alt="About Farm2Doors" className="rounded-xl shadow-md w-full h-auto object-cover" />
+            <img
+              src="./images/about-books.webp"
+              alt="About BookXChange"
+              className="rounded-xl shadow-md w-full h-auto object-cover"
+            />
           </div>
 
           {/* Sell & Grow */}
           <div className="space-y-6">
             <div className="flex items-center mb-2 space-x-2">
-              <Leaf className="text-primary w-6 h-6" />
+              <Package className="text-primary w-6 h-6" />
               <span className="text-sm font-medium uppercase tracking-wide text-primary">
                 For Sellers
               </span>
             </div>
-            <h2 className="text-3xl font-bold">Sell & Grow with Confidence</h2>
+            <h2 className="text-3xl font-bold">Sell & Grow with BookXChange</h2>
             <p className="text-muted-foreground text-lg">
-              List your produce, expand your reach, and thrive with the tools we’ve built just for you.
+              List your books, connect with readers, and expand your reach with
+              our easy tools.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6 mt-6">
               {sellGrowFeatures.map((item, i) => {
                 const Icon = item.icon;
                 return (
-                  <div key={i} className="bg-white shadow p-5 rounded-xl flex space-x-4 items-start">
+                  <div
+                    key={i}
+                    className="bg-white shadow p-5 rounded-xl flex space-x-4 items-start"
+                  >
                     <Icon className="w-8 h-8 text-primary mt-1" />
                     <div>
-                      <h4 className="font-semibold text-primary mb-1">{item.title}</h4>
-                      <p className="text-sm text-muted-foreground">{item.desc}</p>
+                      <h4 className="font-semibold text-primary mb-1">
+                        {item.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        {item.desc}
+                      </p>
                     </div>
                   </div>
                 );
@@ -240,15 +311,20 @@ const Index = () => {
             </div>
 
             <div className="flex flex-wrap justify-center sm:justify-start gap-4 mt-8">
-              <Button asChild className="bg-gradient-primary hover:bg-gradient-primary/80 min-w-[150px] text-sm md:text-base">
+              <Button
+                asChild
+                className="bg-gradient-primary hover:bg-gradient-primary/80 min-w-[150px] text-sm md:text-base"
+              >
                 <Link to="/start-selling">Start Selling</Link>
               </Button>
-              <Button asChild className="bg-accent hover:bg-accent/80 min-w-[150px] text-sm md:text-base">
+              <Button
+                asChild
+                className="bg-accent hover:bg-accent/80 min-w-[150px] text-sm md:text-base"
+              >
                 <Link to="/pricing">View Pricing</Link>
               </Button>
             </div>
           </div>
-
 
           {/* Support & Resources */}
           <div className="relative bg-muted/30 rounded-xl py-6 space-y-6">
@@ -258,9 +334,10 @@ const Index = () => {
                 Help at Every Step
               </span>
             </div>
-            <h2 className="text-3xl font-bold">Farmer Support & Learning</h2>
+            <h2 className="text-3xl font-bold">Reader & Seller Support</h2>
             <p className="text-muted-foreground text-lg">
-              Whether you're new or experienced, our tools and team are here to back your every step.
+              Whether you’re buying your first book or selling your collection,
+              we’re here to support you.
             </p>
 
             <div className="space-y-6 mt-6">
@@ -269,9 +346,11 @@ const Index = () => {
                   <PhoneCall className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-1">24/7 Dedicated Support</h4>
+                  <h4 className="font-semibold text-primary mb-1">
+                    24/7 Dedicated Support
+                  </h4>
                   <p className="text-sm text-muted-foreground">
-                    Call, message, or email — our team is available whenever you need help.
+                    Call, chat, or email — our team is always here to help.
                   </p>
                 </div>
               </div>
@@ -281,9 +360,12 @@ const Index = () => {
                   <BookOpenCheck className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-primary mb-1">Knowledge Hub</h4>
+                  <h4 className="font-semibold text-primary mb-1">
+                    Knowledge Hub
+                  </h4>
                   <p className="text-sm text-muted-foreground">
-                    Access farming guides, latest schemes, and expert webinars to upskill yourself.
+                    Access guides, FAQs, and tips to make the most out of
+                    BookXChange.
                   </p>
                 </div>
               </div>
@@ -291,24 +373,29 @@ const Index = () => {
 
             <div className="bg-background border-l-4 border-primary p-4 mt-8 rounded-md shadow-sm">
               <p className="italic text-muted-foreground text-sm">
-                “When I started, I had no idea where to begin. The Farm2Doors support team walked me through everything.” — <span className="font-semibold">Amit, Farmer from Nashik</span>
+                “I sold my old collection easily and connected with readers who
+                truly valued them.” —{" "}
+                <span className="font-semibold">Ravi, Seller from Delhi</span>
               </p>
             </div>
 
             <div className="flex flex-wrap justify-center sm:justify-start gap-4 mt-6">
-              <Button asChild className="bg-gradient-primary hover:bg-gradient-primary/80 min-w-[150px] text-sm md:text-base">
-                <Link to="/farmer-support">Get Support</Link>
+              <Button
+                asChild
+                className="bg-gradient-primary hover:bg-gradient-primary/80 min-w-[150px] text-sm md:text-base"
+              >
+                <Link to="/support">Get Support</Link>
               </Button>
-              <Button asChild className="bg-accent hover:bg-accent/80 min-w-[150px] text-sm md:text-base">
+              <Button
+                asChild
+                className="bg-accent hover:bg-accent/80 min-w-[150px] text-sm md:text-base"
+              >
                 <Link to="/resources">Explore Resources</Link>
               </Button>
             </div>
           </div>
-
-
         </div>
       </section>
-
     </div>
   );
 };

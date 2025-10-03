@@ -48,7 +48,7 @@ const Navbar = () => {
   const helpItems = [
     { href: "/about", label: "About Us" },
     { href: "/start-selling", label: "Start Selling" },
-    { href: "/farmer-support", label: "Farmer Support" },
+    { href: "/farmer-support", label: "Support" },
     { href: "/resources", label: "Resources" },
   ];
 
@@ -58,10 +58,10 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg">
-            <img src="./images/logo.webp" alt="farm2doors" />
+            <img src="./images/logo.webp" alt="BookXChange" />
           </div>
           <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-            Farm<span className="text-accent">2</span>Doors
+            Book<span className="text-accent">X</span>Change
           </span>
         </Link>
 
