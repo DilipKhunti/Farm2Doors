@@ -98,7 +98,7 @@ const Index = () => {
                   <span className="sm:text-accent text-primary">Read</span> &{" "}
                   <span className="text-accent">Collect</span>
                 </h1>
-                <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
+                <p className="text-xl md:text-2xl text-orange-200 leading-relaxed">
                   BookXChange connects readers and sellers in one trusted
                   marketplace. Explore thousands of books and grow your personal
                   library.
