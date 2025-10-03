@@ -1,5 +1,13 @@
 import { Link } from "react-router-dom";
-import { Store, Instagram, Facebook, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
+import {
+  Store,
+  Instagram,
+  Facebook,
+  MessageCircle,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,8 +27,9 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Connecting farmers directly with customers for the freshest produce delivery. 
-              From farm to your doorstep, we bring you quality products with trust and transparency.
+              BookXChange connects readers and sellers in one trusted
+              marketplace. Explore thousands of books and grow your personal
+              library.
             </p>
             <div className="flex space-x-3">
               <a
@@ -54,26 +63,26 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-foreground">Quick Links</h3>
             <div className="space-y-2">
-              <Link 
-                to="/" 
+              <Link
+                to="/"
                 className="block text-sm text-muted-foreground hover:text-primary transition-smooth"
               >
                 Home
               </Link>
-              <Link 
-                to="/shop" 
+              <Link
+                to="/shop"
                 className="block text-sm text-muted-foreground hover:text-primary transition-smooth"
               >
                 Shop
               </Link>
-              <Link 
-                to="/profile" 
+              <Link
+                to="/profile"
                 className="block text-sm text-muted-foreground hover:text-primary transition-smooth"
               >
                 Profile
               </Link>
-              <Link 
-                to="/about" 
+              <Link
+                to="/about"
                 className="block text-sm text-muted-foreground hover:text-primary transition-smooth"
               >
                 About Us
@@ -85,26 +94,26 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-foreground">For Farmers</h3>
             <div className="space-y-2">
-              <Link 
-                to="/start-selling" 
+              <Link
+                to="/start-selling"
                 className="block text-sm text-muted-foreground hover:text-primary transition-smooth"
               >
                 Start Selling
               </Link>
-              <Link 
-                to="/pricing" 
+              <Link
+                to="/pricing"
                 className="block text-sm text-muted-foreground hover:text-primary transition-smooth"
               >
                 Pricing
               </Link>
-              <Link 
-                to="/farmer-support" 
+              <Link
+                to="/farmer-support"
                 className="block text-sm text-muted-foreground hover:text-primary transition-smooth"
               >
                 Support
               </Link>
-              <Link 
-                to="/resources" 
+              <Link
+                to="/resources"
                 className="block text-sm text-muted-foreground hover:text-primary transition-smooth"
               >
                 Resources
@@ -126,7 +135,11 @@ const Footer = () => {
               </div>
               <div className="flex items-start space-x-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 flex-shrink-0 mt-0.5" />
-                <span>123 Book Valley Road<br />Book District, CA 95001</span>
+                <span>
+                  123 Book Valley Road
+                  <br />
+                  Book District, CA 95001
+                </span>
               </div>
             </div>
           </div>
@@ -135,16 +148,22 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} BuyBooks. All rights reserved.
+            © {currentYear} BookXChange. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm text-muted-foreground">
-            <Link to="/privacy" className="hover:text-primary transition-smooth">
+            <Link
+              to="/privacy"
+              className="hover:text-primary transition-smooth"
+            >
               Privacy Policy
             </Link>
             <Link to="/terms" className="hover:text-primary transition-smooth">
               Terms of Service
             </Link>
-            <Link to="/cookies" className="hover:text-primary transition-smooth">
+            <Link
+              to="/cookies"
+              className="hover:text-primary transition-smooth"
+            >
               Cookie Policy
             </Link>
           </div>

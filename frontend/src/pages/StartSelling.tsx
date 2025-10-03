@@ -178,7 +178,7 @@ const StartSelling = () => {
       {/* CTA */}
       <div className="text-center space-y-6 bg-gradient-primary/10 rounded-lg p-8">
         <h2 className="text-3xl font-bold text-foreground">Ready to Start?</h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-muted-foreground max-w-2xl mx-auto pb-8">
           Join the BookXChange community today and start reaching readers who love
           books.
         </p>

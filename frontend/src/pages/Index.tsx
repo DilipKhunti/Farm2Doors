@@ -268,7 +268,7 @@ const Index = () => {
               </div>
             </div>
             <img
-              src="./images/about-books.webp"
+              src="./images/about.webp"
               alt="About BookXChange"
               className="rounded-xl shadow-md w-full h-auto object-cover"
             />

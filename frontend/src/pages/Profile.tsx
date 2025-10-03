@@ -106,7 +106,7 @@ const Profile = () => {
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList
-            className={`grid grid-cols-2 gap-3 w-full pb-4 h-auto ${
+            className={`grid grid-cols-2 gap-3 w-full bg-white pb-4 h-auto ${
               authUser.role === "seller" ? "lg:grid-cols-4" : "lg:grid-cols-2"
             }`}
           >
